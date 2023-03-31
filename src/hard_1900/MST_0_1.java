@@ -1,4 +1,4 @@
-package graph;
+package hard_1900;
 
 import java.util.*;
 public class MST_0_1 {
