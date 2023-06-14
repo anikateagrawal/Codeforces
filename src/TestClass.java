@@ -1,5 +1,17 @@
 import java.util.*;
+/*
+7
+2
+3
+World
+Asia
+Africa
+India
+China
+South_Africa
+Egypt
 
+ */
 class TestClass {
     static int m=0;
     static Integer lock[];
@@ -7,7 +19,7 @@ class TestClass {
     static int desLocked[];
     static List<List<Integer>> lockDes;
     static List<String> l;
-    static int flag=1;
+    static int flag[];
     public static void main(String args[] ) throws Exception {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -21,60 +33,62 @@ class TestClass {
         }
         lock=new Integer[n];
         desLocked=new int[n];
+        flag=new int[n];
+        Arrays.fill(flag,1);
+        lockDes=new ArrayList<>();
         for(int i=0;i<n;i++)lockDes.add(new ArrayList<>());
-        for(int i=0;i<q;i++){
-            int t=sc.nextInt();
-            String name=sc.next();
-            int uid=sc.nextInt();
-            boolean res=false;
-            if(!nodeIndex.containsKey(name)){
-                System.out.println(false);
-                continue;
-            }
-            switch(t){
-                case 1:res=lock(name,uid);break;
-                case 2:res=unlock(name,uid);break;
-                case 3:res=upgrade(name,uid);break;
-            }
-            System.out.println(res);
-        }
+//        for(int i=0;i<q;i++){
+//            int t=sc.nextInt();
+//            String name=sc.next();
+//            int uid=sc.nextInt();
+//            boolean res=false;
+//            if(!nodeIndex.containsKey(name)){
+//                System.out.println(false);
+//                continue;
+//            }
+//            switch(t){
+//                case 1:res=lock(name,uid);break;
+//                case 2:res=unlock(name,uid);break;
+//                case 3:res=upgrade(name,uid);break;
+//            }
+//            System.out.println(res);
+//        }
+        Thread ancestor=new Thread(()-> System.out.println(lock("Asia",1)+" ancestor"));
+        Thread descendant=new Thread(()-> System.out.println(lock("India",2)+" descendant"));
+        Thread sibling =new Thread(()-> System.out.println(lock("China",3)+" sibling"));
+        descendant.start();
+        sibling.start();
+        ancestor.start();
     }
 
 
-    static boolean lock(String name,int uid){
-        int f=flag--;
-        if(f!=0){
+    static boolean lock(String name,int uid) {
+        int idx = nodeIndex.get(name);
+        int f = flag[idx]--;
+        if (f != 1) {
+            flag[idx]++;
             return false;
         }
-        int idx=nodeIndex.get(name);
-        if(desLocked[idx]==0&&checkAnc(idx))
-        {
-            lock[idx]=uid;
-            return true;
+        if(desLocked[idx]>0||lock[idx]!=null||!checkAnc((idx-1)/m,idx)){
+            flag[idx]++;
+            return false;
         }
-        updateAnc((idx-1)/m,idx);
-        flag=1;
-        return false;
+        lock[idx]=uid;
+        flag[idx]++;
+        return true;
     }
-    static void updateAnc(int i,int idx){
+
+    static boolean checkAnc(int i,int idx){
         desLocked[i]++;
-        lockDes.get(i).add(idx);
-        if(i==0)return;
-        updateAnc((i-1)/m,idx);
-    }
-    //    static boolean checkDesc(int i){
-//        if(i>=l.size())return true;
-//        if(lock[i]!=null)return false;
-//        for(int j=1;j<=m;j++){
-//            if(!checkDesc(i*m+j))return false;
-//        }
-//        return true;
-//    }
-    static boolean checkAnc(int i){
-        if(i<0)return true;
-        if(lock[i]!=null)return false;
+        if(lock[i]!=null||flag[i]!=1){
+            desLocked[i]--;
+            return false;
+        }
         if(i==0)return true;
-        return checkAnc((i-1)/m);
+        boolean f=checkAnc((i-1)/m,idx);
+        if(!f)desLocked[i]--;
+        if(f)lockDes.get(i).add(idx);
+        return f;
     }
     static boolean unlock(String name,int uid){
         int idx=nodeIndex.get(name);
@@ -90,42 +104,19 @@ class TestClass {
         desLocked[i]--;
         lockDes.get(i).remove((Integer)idx);
         if(i==0)return;
-        updateAnc((i-1)/m,idx);
+        updateAnc2((i-1)/m,idx);
     }
-    static boolean hasLocDes;
+
     static boolean upgrade(String name,int uid){
         int idx=nodeIndex.get(name);
         if(lock[idx]!=null)return false;
-//        hasLocDes=false;
-//        for(int j=1;j<=m;j++){
-//            if(!allLocByU(idx*m+j,uid))return false;
-//        }
-//        if(!hasLocDes)return false;
         List<Integer> des=lockDes.get(idx);
         if(des.size()==0)return false;
         for(int i:des){
             if(lock[i]!=uid)return false;
         }
         for(int i:des)unlock(l.get(i),uid);
-
-//        unlockAllDes(idx,uid);
         lock(name,uid);
         return true;
     }
-//    static void unlockAllDes(int i,int uid){
-//        if(i>=l.size())return;
-//        unlock(l.get(i),uid);
-//        for(int j=1;j<=m;j++){
-//            unlockAllDes(i*m+j,uid);
-//        }
-//    }
-//    static boolean allLocByU(int i,int uid){
-//        if(i>=l.size())return true;
-//        if(lock[i]!=null&&lock[i]!=uid)return false;
-//        if(lock[i]!=null&&lock[i]==uid)hasLocDes=true;
-//        for(int j=1;j<=m;j++){
-//            if(!allLocByU(i*m+j,uid))return false;
-//        }
-//        return true;
-//    }
 }
