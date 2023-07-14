@@ -18,8 +18,8 @@ public class Day_at_the_Beach {
         for (int i = n-1; i >=0; i--) {
             rmin[i]=Math.min(rmin[i+1],a[i]);
         }
-        int p=0;
-        for (int i = 0; i < n; i++) {
+        int p=1;
+        for (int i = 1; i < n; i++) {
             if(lmax[i]<=rmin[i])p++;
         }
         System.out.println(p);
