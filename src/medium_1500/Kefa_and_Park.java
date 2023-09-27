@@ -17,6 +17,7 @@ public class Kefa_and_Park {
             int x=sc.nextInt()-1;
             int y=sc.nextInt()-1;
             g.get(x).add(y);
+            g.get(y).add(x);
         }
         System.out.println(dfs(g,0,m,0,a));
     }
@@ -24,9 +25,10 @@ public class Kefa_and_Park {
         if(a[src]==1)c++;
         else c=0;
         if(c>m)return 0;
-        if(g.get(src).size()==0)return 1;
+        if(g.get(src).size()==0&&src!=0)return 1;
         int res=0;
         for(int nb:g.get(src)){
+            g.get(nb).remove((Integer)src);
             res+=dfs(g,nb,m,c,a);
         }
         return res;
