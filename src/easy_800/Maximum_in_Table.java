@@ -16,6 +16,7 @@ public class Maximum_in_Table {
                 a[i][j]=a[i][j-1]+a[i-1][j];
             }
         }
+
         System.out.println(a[n-1][n-1]);
     }
 }
