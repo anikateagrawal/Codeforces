@@ -1,2 +1,2 @@
 # Codeforces
-solutions available in java
+Solutions available in java.
