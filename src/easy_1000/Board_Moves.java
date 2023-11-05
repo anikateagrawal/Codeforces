@@ -7,7 +7,6 @@ public class Board_Moves {
         Scanner sc=new Scanner(System.in);
         int t=sc.nextInt();
         long m[]=new long[1000000];
-        m[1]=0;
         for(int i=1;i<m.length;i++){
             m[i]=8L*i*i+m[i-1];
         }
