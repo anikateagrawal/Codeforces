@@ -1,6 +1,5 @@
 package easy_800;
 
-
 import java.util.Scanner;
 
 public class Add_Odd_or_Subtract_Even {
