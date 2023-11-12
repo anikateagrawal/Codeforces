@@ -7,22 +7,18 @@ public class Number_of_Ways {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
         int a[]=new int[n];
-        int total=0;
+
         for(int i=0;i<n;i++){
             a[i]=sc.nextInt();
-            total+=a[i];
+            if(i>0)a[i]+=a[i-1];
         }
-        int rsum[]=new int[n];
-        rsum[a.length-1]=a[a.length-1];
-        for(int i=a.length-2;i>=0;i--)rsum[i]+=rsum[i+1];
-        int w=0;
-        int sum=0;
-        for(int i=0;i<n;i++){
-            sum+=a[i];
-            if(3*sum==total){
+        long ans=0,s=0;
+        for(int i=0;i<n-1;i++){
+            if(a[i]*3==2*a[n-1])ans+=s;
+            if(a[i]*3==a[n-1])s++;
+        }
+        System.out.println(ans);
 
-            }
-        }
     }
 
 
