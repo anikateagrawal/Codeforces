@@ -1,3 +1,5 @@
+package meta_cup;
+
 import java.util.*;
 /*
 7
