@@ -15,6 +15,7 @@ public class ABC {
                 System.out.println("YES");
             }
             else System.out.println("NO");
+
         }
     }
 }
