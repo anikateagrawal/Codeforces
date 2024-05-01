@@ -1,5 +1,5 @@
 package easy_900;
-
+//commit
 import java.util.Scanner;
 
 public class Chemistry {
