@@ -1,5 +1,5 @@
 package easy_800;
-
+//commit
 import java.util.Scanner;
 
 public class String_Similarity {
