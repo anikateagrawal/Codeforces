@@ -17,11 +17,11 @@ public class Symmetric_Encoding {
             for (int i=0;i<l.size();i++){
                 m.put(l.get(i),i);
             }
-            String d="";
+            StringBuilder d=new StringBuilder("");
             for (char ch:s.toCharArray()){
-                d+=l.get(l.size()-1-m.get(ch));
+                d.append(l.get(l.size()-1-m.get(ch)));
             }
-            System.out.println(d);
+            System.out.println(d.toString());
         }
     }
 }
