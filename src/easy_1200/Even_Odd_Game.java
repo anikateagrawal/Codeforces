@@ -26,8 +26,6 @@ public class Even_Odd_Game {
             if(s1>s2) System.out.println("Alice");
             else if(s2>s1) System.out.println("Bob");
             else System.out.println("Tie");
-
         }
-
     }
 }
