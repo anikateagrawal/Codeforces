@@ -6,15 +6,17 @@ public class Nearest_Interesting_Number {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int a=sc.nextInt();
+        while(sum(a)%4!=0){
+            a++;
+        }
+        System.out.println(a);
+    }
+    static int sum(int c){
         int sum=0;
-        int c=a;
         while(c>0){
             sum+=c%10;
             c/=10;
         }
-        sum%=4;
-        if(sum==0)sum=4;
-        sum=4-sum;
-        System.out.println(a+sum);
+        return sum;
     }
 }
