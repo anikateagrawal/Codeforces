@@ -8,27 +8,27 @@ import java.util.Scanner;
 public class Towers {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-
-            int n=sc.nextInt();
-            PriorityQueue<int[]> pq=new PriorityQueue<>((i1,i2)->i1[0]-i2[0]);
-            for (int i=0;i<n;i++) {
-                pq.add(new int[]{sc.nextInt(),1});
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        for (int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        Arrays.sort(a);
+        int ans=1;
+        int max=1;
+        int c=1;
+        for (int i=0;i<n-1;i++){
+            if (a[i]==a[i+1]){
+                c++;
             }
-            int ans=1;
-            int max=1;
-            while (pq.size()>1) {
-                int x[]=pq.poll();
-                if(x[0]==pq.peek()[0]) {
-                    int y[]=pq.poll();
-                    int th=x[1]+y[1];
-                    max=Math.max(max,th);
-                    pq.add(new int[]{2*x[0],th});
-                }
-                else {
-                    ans++;
-                }
+            else {
+                max=Math.max(max,c);
+                c=1;
+                ans++;
             }
-            System.out.println(max+" "+ans);
+        }
+        max=Math.max(max,c);
+        System.out.println(max+" "+ans);
 
     }
 }
