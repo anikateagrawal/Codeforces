@@ -8,9 +8,9 @@ public class _Perfect_Permutation {
         int t=sc.nextInt();
         while (t-->0){
             int n=sc.nextInt();
-            for(int i=2;i<=n;i+=2) System.out.print((i)+" "+(i-1)+" ");
-            if(n%2==1) System.out.println(n);
-            else System.out.println();
+            System.out.print(n+" ");
+            for (int i=1;i<n;i++) System.out.print(i+" ");
+            System.out.println();
         }
     }
 }
