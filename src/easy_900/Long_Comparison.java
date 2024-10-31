@@ -13,7 +13,7 @@ public class Long_Comparison {
             String s2=sc.next();
             int z2=sc.nextInt();
             while (z2-->0)s2+="0";
-            int c=s1.compareTo(s2);
+            int c=s1.length()==s2.length()?s1.compareTo(s2):s1.length()-s2.length();
             if(c>0) System.out.println(">");
             else if(c==0) System.out.println("=");
             else System.out.println("<");
