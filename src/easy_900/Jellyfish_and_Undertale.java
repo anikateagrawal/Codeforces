@@ -16,6 +16,7 @@ public class Jellyfish_and_Undertale {
                 arr[i]=sc.nextInt();
                 b+=Math.min(arr[i]+1,a)-1;
             }
+
             System.out.println(b);
         }
     }
