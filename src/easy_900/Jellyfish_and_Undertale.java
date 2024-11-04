@@ -14,9 +14,9 @@ public class Jellyfish_and_Undertale {
             int arr[]=new int[n];
             for (int i=0;i<n;i++){
                 arr[i]=sc.nextInt();
-                b+=Math.min(arr[i],a);
+                b+=Math.min(arr[i]+1,a)-1;
             }
-            System.out.println(b-1);
+            System.out.println(b);
         }
     }
 }
