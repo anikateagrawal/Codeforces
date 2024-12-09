@@ -22,7 +22,7 @@ public class Raspberries {
             if(k==4) {
                 if(e>=2) System.out.println(0);
                 else
-                System.out.println(Math.min(ans,2));
+                System.out.println(Math.min(ans,2-e));
             }
             else System.out.println(ans);
         }
