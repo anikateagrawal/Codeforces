@@ -12,7 +12,7 @@ public class Jeff_and_Digits {
             if(a==0)z++;
             else f++;
         }
-        if(z==0&&f<9) {
+        if(z==0) {
             System.out.println(-1);return;
         }
         else if(f<9) {
