@@ -15,7 +15,7 @@ public class Fibonacciness {
             int a32=a4-a2;
             int a33=a5-a4;
             if(a31==a32 && a32==a33) System.out.println(3);
-            else if(a31==a32 || a32==a33) System.out.println(2);
+            else if(a31==a32 || a32==a33 || a31==a33) System.out.println(2);
             else System.out.println(1);
         }
     }
