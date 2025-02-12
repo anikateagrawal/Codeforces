@@ -11,7 +11,7 @@ public class Good_Subarrays {
         while (t-->0){
             int n=sc.nextInt();
             String s=sc.next();
-            int ans=0;
+            long ans=0;
             int sum=0;
             Map<Integer,Integer> m=new HashMap<>();
             m.put(0,1);
