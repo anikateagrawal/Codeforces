@@ -9,10 +9,10 @@ public class Plus_Minus_Permutation {
         int t=sc.nextInt();
         while (t-->0){
             int n=sc.nextInt();
-            int x=sc.nextInt();
-            int y=sc.nextInt();
-            int lcm=(x*y)/gcd(x,y);
-            int ln=n/lcm;
+            long x=sc.nextInt();
+            long y=sc.nextInt();
+            long lcm=(x*y)/gcd(x,y);
+            long ln=n/lcm;
             long xn=n-(n/x-ln);
             long yn=n/y-ln;
 //            System.out.println(xn+" "+yn+" "+lcm+" "+ln);
@@ -20,7 +20,7 @@ public class Plus_Minus_Permutation {
             System.out.println(ans);
         }
     }
-    static int gcd(int a,int b){
+    static long gcd(long a,long b){
         if(b==0)return a;
         return gcd(b,a%b);
     }
