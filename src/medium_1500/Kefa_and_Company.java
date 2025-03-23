@@ -19,7 +19,7 @@ public class Kefa_and_Company {
         }
         long max=0;
         for (int i=1;i<=n;i++){
-            int in=search(a,a[i][0]+d);
+            int in=search(a,a[i][0]+d-1);
             long diff=a[in][1]-a[i-1][1];
             max=Math.max(max,diff);
         }
