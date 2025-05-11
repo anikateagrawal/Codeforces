@@ -11,7 +11,13 @@ public class Bobritto_Bandito {
             int m=sc.nextInt();
             int l=sc.nextInt();
             int r=sc.nextInt();
-            System.out.println(l+" "+(l+m));
+            int l1=l,r1=l+m;
+            if(r1<0){
+                int d=0-r1;
+                r1+=d;
+                l1+=d;
+            }
+            System.out.println(l1+" "+(r1));
         }
     }
 }
