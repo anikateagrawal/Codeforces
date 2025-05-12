@@ -9,7 +9,7 @@ public class Dora_s_Set {
         while (t-->0){
             int l=sc.nextInt();
             int r=sc.nextInt();
-            if(r-l==2)r++;
+            if(l%2==1&&r%2==1)r++;
             System.out.println((r-l+1)/4);
         }
     }
