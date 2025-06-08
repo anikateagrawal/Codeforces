@@ -9,7 +9,11 @@ public class Right_Left_Wrong {
         while (t-->0){
             int n=sc.nextInt();
             int a[]=new int[n];
-            for (int i=0;i<n;i++)a[i]=sc.nextInt();
+            long p[]=new long[n+1];
+            for (int i=0;i<n;i++){
+                a[i]=sc.nextInt();
+                p[i+1]=p[i]+a[i];
+            }
             String s=sc.next();
             int i=0,j=n-1;
             long ans=0;
@@ -22,18 +26,11 @@ public class Right_Left_Wrong {
                     j--;
                     continue;
                 }
-                ans+=score(i,j,a);
+                ans+=p[j+1]-p[i];
                 i++;
                 j--;
             }
             System.out.println(ans);
         }
-    }
-    static long score(int l,int r,int a[]){
-        long ans=0;
-        while (l<=r){
-            ans+=a[l++];
-        }
-        return ans;
     }
 }
