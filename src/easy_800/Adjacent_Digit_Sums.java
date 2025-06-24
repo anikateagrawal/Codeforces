@@ -2,6 +2,7 @@ package easy_800;
 
 import java.util.Scanner;
 
+
 public class Adjacent_Digit_Sums {
     public static void main(String[]a) {
         Scanner s = new Scanner(System.in);
