@@ -10,13 +10,14 @@ public class Find_Minimum_Operations {
             int n=sc.nextInt();
             int k=sc.nextInt();
             int op=0;
+            if(k==1) {
+                System.out.println(n);continue;
+            }
             while (n>0){
-                int p=(int)(Math.log(n)/Math.log(k));
-                op++;
-                n-=Math.pow(k,p);
+                op+=n%k;
+                n/=k;
             }
             System.out.println(op);
-
         }
     }
 }
