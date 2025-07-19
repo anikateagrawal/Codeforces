@@ -24,7 +24,6 @@ public class TubeTube_Feed {
                         mi=i;
                     }
                 }
-//                System.out.println(a[i]+" "+i);
             }
             if(mi==-1) System.out.println(-1);
             else
