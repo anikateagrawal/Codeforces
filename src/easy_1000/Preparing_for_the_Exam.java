@@ -17,16 +17,16 @@ public class Preparing_for_the_Exam {
 
             Set<Integer> s=new HashSet<>();
             for (int i=0;i<k;i++)s.add(sc.nextInt());
-            String ans="";
+            StringBuilder ans=new StringBuilder();
             for (int i=0;i<m;i++){
-                if(k>=n)ans+="1";
-                else if(k<n-1)ans+="0";
+                if(k>=n)ans.append("1");
+                else if(k<n-1)ans.append("0");
                 else{
-                    if(s.contains(a[i]))ans+="0";
-                    else ans+="1";
+                    if(s.contains(a[i]))ans.append("0");
+                    else ans.append("1");
                 }
             }
-            System.out.println(ans);
+            System.out.println(ans.toString());
         }
     }
 }
