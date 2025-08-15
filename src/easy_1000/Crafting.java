@@ -12,23 +12,45 @@ public class Crafting {
             for (int i=0;i<n;i++)a[i]=sc.nextInt();
             int b[]=new int[n];
             for (int i=0;i<n;i++)b[i]=sc.nextInt();
-            int max=0;
-            int mi=-1;
-            for (int i=0;i<n;i++){
-                int d=b[i]-a[i];
-                if(d>max){
-                    max=d;
-                    mi=i;
-                }
-            }
+
             boolean flag=true;
             for (int i=0;i<n;i++){
-                if(i==mi)continue;
-                if(a[i]-max<b[i])flag=false;
+                if(b[i]>a[i]){
+                    int r=b[i]-a[i];
+                    for (int j=0;j<n;j++){
+                        if(j==i)continue;
+                        if(a[j] < b[j]+r){
+                            flag=false;
+                            break;
+                        }
+                    }
+                    break;
+                }
             }
 
-            if (flag) System.out.println("YES");
+            if(flag) System.out.println("YES");
             else System.out.println("NO");
+//            int n=sc.nextInt();
+//            int a[]=new int[n];
+//            for (int i=0;i<n;i++)a[i]=sc.nextInt();
+//            int b[]=new int[n];
+//            for (int i=0;i<n;i++)b[i]=sc.nextInt();
+//            boolean flag=true;
+//            for (int i=0;i<n;i++){
+//                if(b[i]>a[i]){
+//                    int r=b[i]-a[i];
+//                    for (int j=0;j<n;j++){
+//                        if(i==j)continue;
+//                        if(b[j]+r>a[j]){
+//                            flag=false;
+//                            break;
+//                        }
+//                    }
+//                    break;
+//                }
+//            }
+//            if (flag) System.out.println("YES");
+//            else System.out.println("NO");
         }
     }
 }

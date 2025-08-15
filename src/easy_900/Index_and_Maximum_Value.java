@@ -9,26 +9,45 @@ public class Index_and_Maximum_Value {
         while (t-->0){
             int n=sc.nextInt();
             int m=sc.nextInt();
-            int max=0;
-            for (int i=0;i<n;i++){
-                max=Math.max(max,sc.nextInt());
-            }
+            int a[]=new int[n];
+            for (int i=0;i<n;i++)a[i]=sc.nextInt();
 
             for (int i=0;i<m;i++){
                 char ch=sc.next().charAt(0);
                 int l=sc.nextInt();
                 int r=sc.nextInt();
-                if(max>=l && max<=r){
-                    if(ch=='+'){
-                        max++;
+                int v=ch=='+'?+1:-1;
+                int max=Integer.MIN_VALUE;
+                for (int j=0;j<n;j++){
+                    if(a[j]>=l&&a[j]<=r){
+                        a[j]+=v;
                     }
-                    else {
-                        max--;
-                    }
+                    max=Math.max(max,a[j]);
                 }
                 System.out.print(max+" ");
             }
             System.out.println();
+            
+//            int max=0;
+//            for (int i=0;i<n;i++){
+//                max=Math.max(max,sc.nextInt());
+//            }
+//
+//            for (int i=0;i<m;i++){
+//                char ch=sc.next().charAt(0);
+//                int l=sc.nextInt();
+//                int r=sc.nextInt();
+//                if(max>=l && max<=r){
+//                    if(ch=='+'){
+//                        max++;
+//                    }
+//                    else {
+//                        max--;
+//                    }
+//                }
+//                System.out.print(max+" ");
+//            }
+//            System.out.println();
 
         }
     }
