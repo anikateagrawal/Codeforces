@@ -11,10 +11,7 @@ public class Fence {
             int a[]=new int[3];
             for (int i=0;i<3;i++)a[i]=sc.nextInt();
             Arrays.sort(a);
-            if(a[2]>a[1]+a[0]){
-                System.out.println(a[2]-a[1]-a[0]+1);
-            }
-            else System.out.println(1);
+            System.out.println(a[2]);
         }
     }
 }
