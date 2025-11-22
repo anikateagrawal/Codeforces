@@ -11,10 +11,10 @@ public class Maximum_Median {
         int a[]=new int[n];
         for (int i=0;i<n;i++)a[i]=sc.nextInt();
         Arrays.sort(a);
-        int m=a[n/2];
+        long m=a[n/2];
         int c=1;
         for (int i=n/2+1;i<n;i++){
-            int d=a[i]-m;
+            long d=a[i]-m;
             if(d*c<=k){
                 k-=d*c;
                 m=a[i];
