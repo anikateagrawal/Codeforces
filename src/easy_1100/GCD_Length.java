@@ -10,8 +10,8 @@ public class GCD_Length {
         while (T-- > 0) {
             int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
             int x = (int) Math.pow(10, a - 1), y = (int) Math.pow(10, b - 1), gcd = (int) Math.pow(10, c - 1);
-            x = x - (x % gcd);
-            y = y - (y % gcd) + gcd;
+            x = x ;
+            y = y + gcd;
             System.out.println(x + " " + y);
         }
     }
