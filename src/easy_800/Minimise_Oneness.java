@@ -8,11 +8,11 @@ public class Minimise_Oneness {
         int t=sc.nextInt();
         while (t-->0){
             int n=sc.nextInt();
-            String s="1";
+            StringBuilder s=new StringBuilder("1");
             for (int i=0;i<n-1;i++){
-                s+="0";
+                s.append("0");
             }
-            System.out.println(s);
+            System.out.println(s.toString());
         }
     }
 }
