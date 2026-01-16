@@ -11,7 +11,7 @@ public class Distanced_Coloring {
             int m=sc.nextInt();
             int k=sc.nextInt();
             n=Math.min(n,k);
-            m=Math.max(m,k);
+            m=Math.min(m,k);
             System.out.println(n*m);
         }
     }
