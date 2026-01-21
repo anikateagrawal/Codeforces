@@ -11,9 +11,16 @@ public class Ashmal {
             int n=sc.nextInt();
             String a[]=new String[n];
             for (int i=0;i<n;i++)a[i]=sc.next();
-            Arrays.sort(a,(i1,i2)->(i1+i2).compareTo(i2+i1));
-            for (String s:a) System.out.print(s);
-            System.out.println();
+            String ans="";
+            for (String s:a) {
+                String ns=ans+s;
+                String ns2=s+ans;
+                if(ns.compareTo(ns2)<0){
+                    ans=ns;
+                }
+                else ans=ns2;
+            }
+            System.out.println(ans);
         }
     }
 }
