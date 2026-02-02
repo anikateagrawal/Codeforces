@@ -7,9 +7,9 @@ public class Chips {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
         int m=sc.nextInt();
-        int i=1;
+        int i=0;
         while(i<=m){
-            m-=i;
+            m-=(i+1);
             i=(i+1)%n;
         }
         System.out.println(m);
