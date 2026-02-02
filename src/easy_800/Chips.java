@@ -8,7 +8,7 @@ public class Chips {
         int n=sc.nextInt();
         int m=sc.nextInt();
         int i=0;
-        while(i<=m){
+        while(i+1<=m){
             m-=(i+1);
             i=(i+1)%n;
         }
