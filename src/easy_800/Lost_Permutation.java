@@ -10,19 +10,17 @@ public class Lost_Permutation {
             int m=sc.nextInt();
             int s=sc.nextInt();
             int a[]=new int[m];
-            int sum=0;
             for (int i=0;i<m;i++){
                 a[i]=sc.nextInt();
-                sum+=a[i];
+                s+=a[i];
             }
             boolean flag=false;
             for (int i=1;i<1000;i++){
                 int ap=i*(i+1)/2;
-                int r=ap-sum;
-                if(r==s){
+                if(ap==s){
                     flag=true;
                 }
-                else if(r>sum)break;
+                else if(ap>s)break;
             }
             if (flag) System.out.println("YES");
             else System.out.println("NO");
