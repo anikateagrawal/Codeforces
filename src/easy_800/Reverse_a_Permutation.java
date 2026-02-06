@@ -10,19 +10,20 @@ public class Reverse_a_Permutation {
             int n=sc.nextInt();
             int a[]=new int[n];
             for (int i=0;i<n;i++)a[i]=sc.nextInt();
-            int f=n;
-            if(a[0]==n)f--;
-            int in=-1;
-            for(int i=0;i<n;i++){
-                if(a[i]==f)in=i;
-            }
-            int j=in,i=0;
-            if(f!=n)i++;
-            while (i<j){
-                int tmp=a[i];
-                a[i]=a[j];
-                a[j]=tmp;
-                i++;j--;
+            int i=0;
+            while (i<n && a[i]==n-i)i++;
+            if(i!=n){
+                int j=i+1;
+                int f=n-i;
+                while (j<n && a[j]!=f){
+                    j++;
+                }
+                while (i<j){
+                    int tmp=a[i];
+                    a[i]=a[j];
+                    a[j]=tmp;
+                    i++;j--;
+                }
             }
             for (int num:a) System.out.print(num+" ");
             System.out.println();
