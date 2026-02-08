@@ -14,11 +14,10 @@ public class MEX_rose {
                 a[sc.nextInt()]++;
             }
             int o=0;
-            for (int i=0;i<k;i++){
-                if(a[i]==0)o++;
+            for (int i=0;i<k;i++) {
+                if (a[i] == 0) o++;
             }
-            o=a[k];
-            System.out.println(o);
+            System.out.println(Math.max(o,a[k]));
         }
     }
 }
