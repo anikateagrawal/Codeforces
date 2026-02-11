@@ -11,16 +11,22 @@ public class Divide_and_Equalize {
         while (t-->0){
             int n=sc.nextInt();
             int a[]=new int[n];
-            for(int i=0;i<n;i++)a[i]=sc.nextInt();
             Map<Integer,Integer> map=new HashMap<>();
             for (int i=0;i<n;i++){
-                for (int p=2;;p++){
+                a[i]=sc.nextInt();
+                int p=2;
+                while (a[i]%p==0){
+                    map.put(p,map.getOrDefault(p,0)+1);
+                    a[i]/=p;
+                }
+                for (p=3;p<=Math.sqrt(a[i]);p+=2){
                     while (a[i]%p==0){
                         map.put(p,map.getOrDefault(p,0)+1);
                         a[i]/=p;
                     }
                     if(a[i]==1)break;
                 }
+                if(a[i]>2)map.put(a[i],map.getOrDefault(a[i],0)+1);
             }
             boolean flag=true;
             for (int f:map.keySet()){
