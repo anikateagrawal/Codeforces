@@ -1,6 +1,7 @@
 package other;
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class abc {
@@ -10,18 +11,9 @@ public class abc {
         while (t-->0){
             int n=sc.nextInt();
             int a[]=new int[n];
-            for (int i=0;i<n;i++)a[i]=sc.nextInt();
-            boolean ans=fun(a,1,0);
-            if (ans) System.out.println("YES");
-            else System.out.println("NO");
+            int b[]=new int[n];
+
+
         }
-        
-    }
-    static boolean fun(int a[],int p,int i){
-        if(p==67)return true;
-        if(i==a.length)return false;
-        boolean ans=fun(a,p*a[i],i+1);
-        ans|=fun(a,p,i+1);
-        return ans;
     }
 }
