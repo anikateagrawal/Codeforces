@@ -9,20 +9,25 @@ public class abc {
         int t=sc.nextInt();
         while (t-->0){
             int n=sc.nextInt();
+            int h=sc.nextInt();
+            int l=sc.nextInt();
             int a[]=new int[n];
-            for (int i=0;i<n;i++)a[i]=sc.nextInt();
-            int fr[]=new int[101];
-            int fr2[]=new int[101];
-            for (int i:a){
-                fr[i]++;
-                int f=fr[i];
-                fr2[f]++;
+            int b=0,r=0,c=0;
+            for (int i=0;i<n;i++){
+                a[i]=sc.nextInt();
+                if(a[i]<=h && a[i]<=l)b++;
+                else if(a[i]<=h)r++;
+                else if(a[i]<=l)c++;
             }
-            int max=0;
-            for (int i=0;i<101;i++){
-                max=Math.max(max,fr2[i]*i);
+            int ans=Math.min(r,c);
+            int rem=r+c-2*ans;
+            if(rem>=b){
+                ans+=b;
             }
-            System.out.println(max);
+            else{
+                ans+=rem + (b-rem)/2;
+            }
+            System.out.println(ans);
         }
     }
 }
