@@ -10,14 +10,16 @@ public class Arranging_The_Sheep {
             int n=sc.nextInt();
             String s=sc.next();
             int l[]=new int[n];
-            if(s.charAt(0)=='*')l[0]=1;
-            for (int i=1;i<n;i++){
-                l[i]=s.charAt(i)=='*'?l[i-1]+1:l[i-1];
+            int ast=0;
+            for (int i=0;i<n;i++){
+                if(s.charAt(i)=='*')ast++;
+                l[i]=ast;
             }
             int r[]=new int[n];
-            if (s.charAt(n-1)=='*')r[n-1]=1;
-            for (int i=n-2;i>=0;i--){
-                r[i]=s.charAt(i)=='*'?r[i+1]+1:r[i+1];
+            ast=0;
+            for (int i=n-1;i>=0;i--){
+                if(s.charAt(i)=='*')ast++;
+                r[i]=ast;
             }
             long ans=0;
             for (int i=0;i<n;i++){
