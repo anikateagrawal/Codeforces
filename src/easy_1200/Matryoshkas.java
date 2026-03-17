@@ -26,6 +26,7 @@ public class Matryoshkas {
                     c=1;
                 }
                 else {
+                    if(c>p)ans+=c-p;
                     p=0;
                     c=1;
                 }
