@@ -23,7 +23,6 @@ public class Strange_Birthday_Party {
                     ans+=c[p++];
                 }
                 else ans+=c[k2];
-//                System.out.println(ans);
             }
             System.out.println(ans);
         }
