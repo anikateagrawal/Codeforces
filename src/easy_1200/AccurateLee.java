@@ -15,7 +15,6 @@ public class AccurateLee {
             s=s.substring(i);
             int in=s.lastIndexOf('0');
             if(in!=-1)z.append('0');
-            else in=i-1;
             in++;
             while (in<s.length())z.append(s.charAt(in++));
             System.out.println(z);
