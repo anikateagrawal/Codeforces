@@ -12,13 +12,14 @@ public class Lady_Bug {
             char b[]=sc.next().toCharArray();
             int z1=0,z2=0;
             for (int i=0;i<n;i++){
+
                 if (i%2==0){
-                    z1+='1'-a[i];
-                    z2+='1'-b[i];
+                    if(a[i]=='0')z1++;
+                    if(b[i]=='0')z2++;
                 }
                 else {
-                    z2+='1'-a[i];
-                    z1+='1'-b[i];
+                    if(a[i]=='0')z2++;
+                    if(b[i]=='0')z1++;
                 }
             }
             if (z1>=(n+1)/2 && z2>=n/2) System.out.println("YES");
