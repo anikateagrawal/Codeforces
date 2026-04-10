@@ -21,10 +21,11 @@ public class Robin_Hood_in_Town {
             }
             Arrays.sort(a);
             int ravg=a[n/2];
-            int lo=0,hi=Integer.MAX_VALUE;
-            int x=hi;
+            int max=a[n-1];
+            long lo=0,hi=2L*max*n;
+            long x=hi;
             while (lo<=hi){
-                int mid=lo+(hi-lo)/2;
+                long mid=lo+(hi-lo)/2;
                 double avg=(sum+mid+0.0)/n;
                 if (avg/2>ravg){
                     x=mid;
