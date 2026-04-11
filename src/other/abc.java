@@ -7,23 +7,27 @@ public class abc {
         Scanner sc = new Scanner(System.in);
         int t=sc.nextInt();
         while(t-->0){
-            int n=sc.nextInt();
-            int m=sc.nextInt();
-            Set<Integer> rows=new HashSet<>();
-            Set<Integer> cols=new HashSet<>();
-            for (int i=0;i<n;i++){
-                for (int j=0;j<m;j++){
-                    int a=sc.nextInt();
-                    if(a==1){
-                        rows.add(i);
-                        cols.add(j);
+            String n=sc.next();
+            int sum=0;
+            int two=0,three=0;
+            for(char ch:n.toCharArray()){
+                sum+=ch-'0';
+                if (ch=='2')two++;
+                if (ch=='3')three++;
+            }
+            boolean flag=false;
+            outer:
+            for (int i=0;i<=two;i++){
+                for (int j=0;j<=three;j++){
+                    int s = sum + i*2 + j*6;
+                    if (s%9==0){
+                        flag=true;
+                        break outer;
                     }
                 }
             }
-            int ur=n-rows.size();
-            int uc=m-cols.size();
-            int turns=Math.min(ur,uc);
-            System.out.println(turns%2==1?"Ashish":"Vivek");
+            if (flag) System.out.println("YES");
+            else System.out.println("NO");
         }
     }
 }
