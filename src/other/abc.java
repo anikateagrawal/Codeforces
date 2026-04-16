@@ -3,24 +3,27 @@ package other;
 import java.util.*;
 
 public class abc {
-    int date;
-    String name;
-    B obj;
-
-    public abc(int date, String name, B obj) {
-        this.date = date;
-        this.name = name;
-        this.obj = obj;
-    }
-
     public static void main(String[] args) {
-        abc obj=new abc(10,"Anikate ", new B(10));
-        
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        long a[]=new long[n];
+        for (int i=0;i<n;i++)a[i]=sc.nextLong();
+        long gcd=a[0];
+        for (int i=1;i<n;i++){
+            gcd=greatestCommonDivisor(gcd,a[i]);
+        }
+        int count=0;
+        for (int i=1;i<=Math.sqrt(gcd);i++){
+            if (gcd%i==0){
+                count++;
+                long f=gcd/i;
+                if (f!=i)count++;
+            }
+        }
+        System.out.println(count);
     }
-}
-class B{
-    int a;
-    public B(int age){
-        a=age;
+    static long greatestCommonDivisor(long dividend,long divisor){
+        if (divisor==0)return dividend;
+        return greatestCommonDivisor(divisor, dividend % divisor);
     }
 }
