@@ -12,9 +12,9 @@ public class Deadly_Laser {
             int sx=sc.nextInt();
             int sy=sc.nextInt();
             int d=sc.nextInt();
-            int maxy=Math.max(sy,m-sy);
-            int maxx=Math.max(sx,n-sx);
-            if (maxy<=d || maxx<=d) System.out.println(-1);
+            boolean way1 =  sy-1<=d || n-sx<=d;
+            boolean way2 =  sx-1<=d || m-sy<=d;
+            if (way1 && way2) System.out.println(-1);
             else System.out.println(m+n-2);
         }
     }
