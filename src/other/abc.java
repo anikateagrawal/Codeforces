@@ -1,29 +1,21 @@
 package other;
 
 import java.util.*;
+// Write a program to print natural numbers 1 to N
 
 public class abc {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        long a[]=new long[n];
-        for (int i=0;i<n;i++)a[i]=sc.nextLong();
-        long gcd=a[0];
-        for (int i=1;i<n;i++){
-            gcd=greatestCommonDivisor(gcd,a[i]);
-        }
-        int count=0;
-        for (int i=1;i<=Math.sqrt(gcd);i++){
-            if (gcd%i==0){
-                count++;
-                long f=gcd/i;
-                if (f!=i)count++;
-            }
-        }
-        System.out.println(count);
+//        for (int i=n;i>=1;i--){
+//            System.out.print(i+" ");
+//        }
+        fun(n);
     }
-    static long greatestCommonDivisor(long dividend,long divisor){
-        if (divisor==0)return dividend;
-        return greatestCommonDivisor(divisor, dividend % divisor);
+    static void fun(int n){
+        if(n<1)return;
+
+        fun(n-1);
+        System.out.print(n+" ");
     }
 }
