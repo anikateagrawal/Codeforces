@@ -17,7 +17,7 @@ public class Little_Artem {
             a[n-1][m-1]='W';
             for (int i=0;i<n;i++){
                 for (int j=0;j<m;j++){
-                    System.out.print(a[i][j]+" ");
+                    System.out.print(a[i][j]);
                 }
                 System.out.println();
             }
