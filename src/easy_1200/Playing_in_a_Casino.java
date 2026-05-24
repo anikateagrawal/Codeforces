@@ -24,7 +24,7 @@ public class Playing_in_a_Casino {
             for (List<Integer> ll:l){
                 long sum=0;
                 for (int i=0;i<n;i++){
-                    ans+=ll.get(i)*i-sum;
+                    ans+=1L*ll.get(i)*i-sum;
                     sum+=ll.get(i);
                 }
             }
