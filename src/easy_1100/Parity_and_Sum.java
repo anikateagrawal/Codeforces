@@ -16,19 +16,23 @@ public class Parity_and_Sum {
                 if (a[i]%2==1)o.add(a[i]);
                 else e.add(a[i]);
             }
-            int op=0;
             Collections.sort(o);
             Collections.sort(e);
             if (o.size()==0) System.out.println(0);
             else {
+                int op=e.size();
                 long odd=o.get(o.size()-1);
-                int i=0;
-                while (i<e.size()){
-                    op++;
-                    int even=e.get(i);
-                    if (even<odd)i++;
-                    odd=even+odd;
+                boolean fl=false;
+                for (int even:e){
+                    if (even<odd){
+                        odd+=even;
+                    }
+                    else {
+                        fl=true;
+                        break;
+                    }
                 }
+                if (fl)op++;
                 System.out.println(op);
             }
         }
