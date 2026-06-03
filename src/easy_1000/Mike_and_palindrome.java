@@ -6,11 +6,13 @@ public class Mike_and_palindrome {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         String s=sc.next();
-        int f[]=new int[26];
-        for (char ch:s.toCharArray())f[ch-'a']++;
-        int odd=0;
-        for (int i:f)if (i%2==1)odd++;
-        if (odd==0|| odd>3) System.out.println("NO");
+        int ch=0;
+        int i=0,j=s.length()-1;
+        while (i<j){
+            if (s.charAt(i)!=s.charAt(j))ch++;
+            i++;j--;
+        }
+        if (ch==0&&s.length()%2==0||ch>1) System.out.println("NO");
         else System.out.println("YES");
     }
 }
