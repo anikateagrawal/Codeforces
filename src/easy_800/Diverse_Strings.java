@@ -17,6 +17,7 @@ public class Diverse_Strings {
             }
             if (fl) System.out.println("YES");
             else System.out.println("NO");
+
         }
     }
 }
