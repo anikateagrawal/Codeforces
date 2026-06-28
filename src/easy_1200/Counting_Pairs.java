@@ -9,8 +9,8 @@ public class Counting_Pairs {
         int t=sc.nextInt();
         while (t-->0){
             int n=sc.nextInt();
-            long x=sc.nextInt();
-            long y=sc.nextInt();
+            long x=sc.nextLong();
+            long y=sc.nextLong();
             int a[]=new int[n];
             long tot=0;
             for (int i=0;i<n;i++){
