@@ -13,11 +13,10 @@ public class Another_Popcount_Problem {
             else {
                 int d=n/k;
                 String s=Integer.toBinaryString(d);
-                if (!s.contains("0")) {
-                    System.out.println(s.length()*k);
-                    continue;
-                }
                 int m=s.length()-1;
+                if (!s.contains("0")) {
+                    m=s.length();
+                }
                 int n1=(1<<m)-1;
                 int r = n - n1*k;
                 int ans=m*k + r/(1<<(m));
