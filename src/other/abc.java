@@ -5,17 +5,12 @@ import java.util.*;
 
 public class abc {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-//        for (int i=n;i>=1;i--){
-//            System.out.print(i+" ");
-//        }
-        fun(n);
+        int a=1,b=2;
+        while (a!=b){
+            a<<=1;
+            b<<=1;
+        }
+        System.out.println(a);
     }
-    static void fun(int n){
-        if(n<1)return;
 
-        fun(n-1);
-        System.out.print(n+" ");
-    }
 }
