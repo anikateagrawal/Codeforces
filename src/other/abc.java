@@ -1,16 +1,14 @@
 package other;
 
 import java.util.*;
-// Write a program to print natural numbers 1 to N
 
 public class abc {
     public static void main(String[] args) {
-        int a=1,b=2;
-        while (a!=b){
-            a<<=1;
-            b<<=1;
-        }
-        System.out.println(a);
+        int x = -5;        // –2^31
+        int y = -2;
+        int z = x / y;
+        System.out.println(z);
+
     }
 
 }
