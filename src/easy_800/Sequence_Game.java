@@ -3,6 +3,7 @@ package easy_800;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
 public class Sequence_Game {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
