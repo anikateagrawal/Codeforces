@@ -10,7 +10,7 @@ public class Nikita_and_Books {
             int n=sc.nextInt();
             int a[]=new int[n];
             boolean f=true;
-            int p=0;
+            long p=0;
             for (int i=0;i<n;i++){
                 a[i]=sc.nextInt();
                 if (a[i]+p <i+1){
