@@ -16,7 +16,7 @@ public class Burglar_and_Matches {
         Arrays.sort(a,(i1,i2)->i2[1]-i1[1]);
         int i=0;
         long ans=0;
-        while(n>0){
+        while(n>0 && i<m){
             if (n>a[i][0]){
                 ans+=a[i][0]*a[i][1];
                 n-=a[i][0];
