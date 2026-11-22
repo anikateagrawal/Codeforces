@@ -19,7 +19,7 @@ public class Array_Balancing {
                     b[i]=tmp;
                 }
             }
-            int sum=0;
+            long sum=0;
             for (int i=0;i<n-1;i++){
                 sum+=Math.abs(a[i]-a[i+1]);
                 sum+=Math.abs(b[i]-b[i+1]);
